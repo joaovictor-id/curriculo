@@ -99,19 +99,56 @@ li::before{
   box-shadow:0 0 12px rgba(25,211,250,.5);
 }
 
-footer{
-  border-top:1px solid #e5e7eb;
-  padding-top:48px;
-  font-size:.95rem;
-  color:var(--muted);
+/* ===== BOTÃO PDF ===== */
+
+.footer{
+  display:flex;
+  justify-content:center;
+  padding-top:80px;
 }
 
+.pdf-button{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  padding:18px 44px;
+  border-radius:16px;
+  text-decoration:none;
+  background:linear-gradient(90deg,var(--blue),var(--green));
+  box-shadow:0 0 30px rgba(25,211,250,.45);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.pdf-button span{
+  font-size:1.05rem;
+  font-weight:600;
+  letter-spacing:.18em;
+  color:#0b0f19;
+}
+
+.pdf-button small{
+  font-size:.75rem;
+  letter-spacing:.08em;
+  color:#0b0f19;
+  opacity:.85;
+}
+
+.pdf-button:hover{
+  transform:scale(1.07) translateY(-3px);
+  box-shadow:
+    0 0 45px rgba(25,211,250,.6),
+    0 0 70px rgba(33,255,201,.55);
+}
+
+/* ===== PRINT PDF ===== */
 @media print{
   body{background:#fff}
   .container{padding:40px}
 }
 </style>
 </head>
+
 <body>
 
 <div class="container">
@@ -173,9 +210,12 @@ footer{
   <p>Busco oportunidades onde possa contribuir de forma responsável, aprender continuamente e crescer profissionalmente com base na confiança, na constância e na entrega correta do que é esperado. Valorizo ambientes organizados, comunicação transparente e relações pautadas pelo respeito mútuo.</p>
 </section>
 
-<footer>
-  Currículo Online — versão web e PDF
-</footer>
+<div class="footer">
+  <a href="curriculo-joao-victor.pdf" download class="pdf-button">
+    <span>PDF</span>
+    <small>Baixar currículo</small>
+  </a>
+</div>
 
 </div>
 
